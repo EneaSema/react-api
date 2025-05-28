@@ -6,7 +6,7 @@ function App() {
   const urlActresses = "https://lanciweb.github.io/demo/api/actresses/;";
 
   const [actors, setActors] = useState([]);
-  // const [actress, setActress] = useState([]);
+  const [actress, setActress] = useState([]);
 
   useEffect(() => {
     axios.get(urlActors).then((response) => {
@@ -26,6 +26,15 @@ function App() {
     <>
       <div className="container">
         <h1>Cast Fetching</h1>
+        <div className="section-btn">
+          <button>
+            <h2>Section of Actors</h2>
+          </button>
+          <button>
+            <h2>Section of Actress</h2>
+          </button>
+        </div>
+
         <div className="row">
           {actors.map((actor, index) => {
             return (
